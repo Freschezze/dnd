@@ -11,7 +11,7 @@ const BottomAppBar: React.FC = () => {
   const [value, setValue] = useState(0); // Track which tab is selected
 
   return (
-    <AppBar position="fixed" sx={{ bottom: 0, top: 'auto', backgroundColor: '#1f1f1f' }}>
+    <AppBar position="fixed" sx={{ bottom: 33, top: 'auto', backgroundColor: '#1f1f1f' }}>
       <BottomNavigation
       sx={{backgroundColor: '#1f1f1f',
         "& .Mui-selected": {
