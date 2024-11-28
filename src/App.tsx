@@ -1,5 +1,6 @@
 import styles from "./App.module.scss";
 import Background from "./components/background/background";
+import BottomAppBar from "./components/bottomAppBar/bottomAppBar";
 import Header from "./components/header/header";
 import { db } from "./firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
@@ -22,6 +23,7 @@ function App() {
     <div className={styles.App}>
       <Header />
       <Background />
+      <BottomAppBar />
     </div>
   );
 }

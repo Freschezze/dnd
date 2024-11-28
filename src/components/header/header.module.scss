@@ -2,18 +2,12 @@
 
 .profileHeader {
     background-image: url(../../assets/images/rokan-big.png);
-    height: 45%;
+    height: 30vh;
     background-size: cover;
-    background-position: top;
+    background-position: center;
     position: relative;
     z-index: 1;
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 10px;
-    padding: 0 15px;
-
     &::after {
       content: "";
       position: absolute;
@@ -34,12 +28,20 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+  }
+
+  .itemContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 0 15px;
     .flexItem{
-        flex: 1;
-        width: 33%;
-        text-align: center;
-        padding: 5px;
-        font-size: 1.125rem;
-    }
+      flex: 1;
+      width: 33%;
+      text-align: center;
+      padding: 5px;
+      font-size: 1.125rem;
+  }
   }
   
