@@ -1,0 +1,19 @@
+@import './shared/fonts';
+.App{
+    font-family: 'Cinzel Decorative';
+
+    .header{
+        display: flex;
+        padding: 25px;
+        .profileImg{
+            width: 125px;
+            border-radius: 50%;
+        }
+        .profileName{
+            text-align: center;
+            margin-top: 5px;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+    }
+}
