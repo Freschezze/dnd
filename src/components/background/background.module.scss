@@ -1,0 +1,28 @@
+@import '../../shared/scss/variables';
+
+.backgroundAccordionWrapper{
+    margin-top: 25px;
+    .backgroundAccordion{
+        background-color: $dark;
+        box-shadow: none;
+    }
+    .bgProfileDetails{
+        &::after {
+            content: '';
+            display: block;
+            width: 100%; /* Line width, adjust as needed */
+            height: 1px; /* Line thickness */
+            background-color: whitesmoke; /* Line color */
+            margin: 25px auto 0; /* Centers the line */
+          }
+
+          p{
+            margin-bottom: 10px;
+            font-family: 'Medieval Sharp';
+            font-size: 18px;
+        }
+        span{
+            font-style: italic;
+        }
+    }
+}
