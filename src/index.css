@@ -22,11 +22,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000000de;
-  background-image: url(./assets/images/bg.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #1f1f1f;
+  color: whitesmoke;
 }
 
 img, picture, video, canvas, svg {
