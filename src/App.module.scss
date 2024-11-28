@@ -5,15 +5,33 @@
     .header{
         display: flex;
         padding: 25px;
-        .profileImg{
-            width: 125px;
-            border-radius: 50%;
+        display: flex;
+        gap: 35px;
+        .profilePortrait{
+            flex: 0;
+            .profileImg{
+                width: 125px;
+                border-radius: 50%;
+            }
+            .profileName{
+                text-align: center;
+                margin-top: 5px;
+                font-weight: bold;
+                font-size: 1.25rem;
+            }
         }
-        .profileName{
-            text-align: center;
-            margin-top: 5px;
-            font-weight: bold;
-            font-size: 1.25rem;
+        .profileDetails{
+            flex: 1;
+            font-size: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            p{
+                width: 100%;
+                span{
+                    font-style: italic;
+                }
+            }
         }
     }
 }
