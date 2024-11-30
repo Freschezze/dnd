@@ -1,3 +1,7 @@
+export interface Feat {
+  title: string;
+  description: string;
+}
 export interface Feats {
-  [key: string]: string; // Key-value pair for feats (e.g., "feats1": "Esperto di Balestre")
+  feats: Feat[];
 }

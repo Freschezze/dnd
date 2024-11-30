@@ -15,3 +15,9 @@
   position: relative; /* For positioning elements like the AppBar */
 
 }
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

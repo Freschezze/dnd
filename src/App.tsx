@@ -39,7 +39,7 @@ function App() {
   return (
     <div className={styles.AppWrapper}>
       {isLoading ? (
-        <div>Loading...</div> 
+        <div className={styles.loading}>Loading...</div> 
       ) : (
         <div className={styles.App}>
           <Header />

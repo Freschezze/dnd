@@ -18,10 +18,10 @@ const Background: React.FC = () => {
           <Typography sx={{fontSize: 28}}>dettagli profilo</Typography>
         </AccordionSummary>
         <AccordionDetails className={styles.bgProfileDetails}>
-          <p><span>Razza:</span> {profile?.race}</p>
-          <p><span>Classe:</span> {profile?.class}</p>
-          <p><span>Background:</span> {profile?.background}</p>
-          <p><span>Allineamento:</span> {profile?.alignment}</p>
+          <p><span>Razza:</span> {profile?.baseInfo.race}</p>
+          <p><span>Classe:</span> {profile?.baseInfo.class}</p>
+          <p><span>Background:</span> {profile?.baseInfo.background}</p>
+          <p><span>Allineamento:</span> {profile?.baseInfo.alignment}</p>
         </AccordionDetails>
       </Accordion>
     </div>
