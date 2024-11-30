@@ -3,12 +3,11 @@
     display: flex; /* Center the content */
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
   }
 .App {
   font-family: "Cinzel Decorative";
   padding-bottom: 60px;
-  max-width: 1024px; /* Limit the width to mobile size */
+  max-width: 768px; /* Limit the width to mobile size */
   width: 100%; /* Ensure responsiveness */
   height: 100%; /* Take full height */
   display: flex;

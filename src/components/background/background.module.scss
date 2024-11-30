@@ -2,10 +2,7 @@
 
 .backgroundAccordionWrapper{
     margin-top: 25px;
-    .backgroundAccordion{
-        background-color: $dark;
-        box-shadow: none;
-    }
+
     .bgProfileDetails{
         &::after {
             content: '';
@@ -20,6 +17,7 @@
             margin-bottom: 10px;
             font-family: 'Medieval Sharp';
             font-size: 18px;
+            text-transform: capitalize;
         }
         span{
             font-style: italic;

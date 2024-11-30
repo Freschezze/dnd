@@ -1,0 +1,52 @@
+// Stats Panel container style
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// Group for each section of stats (e.g., HP & Temp HP, Combat Stats)
+.statsGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 8px;
+}
+
+// Flex container for each item in the stats group
+.flexItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: white;
+
+  p {
+    margin: 4px 0;
+  }
+
+  // Style for the stat labels
+  p:first-child {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  // Style for the stat values
+  p:last-child {
+    font-size: 16px;
+    color: #e0e0e0;
+  }
+  .deathSaves {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    p {
+        font-size: 16px;
+        color: #e0e0e0;
+        font-weight: normal;
+    }
+  }
+}
