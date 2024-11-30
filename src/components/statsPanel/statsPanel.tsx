@@ -81,7 +81,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
             {/* HP and Temp HP Section */}
             <div className={styles.statsGroup}>
               <div className={styles.flexItem}>
-                <p>HP</p>
+                <p className={styles.bold}>HP</p>
                 <div className={styles.valueWithControls}>
                   { statsEdit && <IconButton size="small" onClick={() => removeOne("hp", "vitalInfo")}>
                     <RemoveIcon sx={{ color: "white" }} />
@@ -95,7 +95,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
                 </div>
               </div>
               <div className={styles.flexItem}>
-                <p>Temp HP</p>
+                <p className={styles.bold}>Temp HP</p>
                 <div className={styles.valueWithControls}>
                   { statsEdit && <IconButton size="small" onClick={() => removeOne("thp", "vitalInfo")}>
                     <RemoveIcon sx={{ color: "white" }} />
@@ -111,7 +111,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
             {/* Initiative, CA, and Speed Section */}
             <div className={styles.statsGroup}>
               <div className={styles.flexItem}>
-                <p>Iniziativa</p>
+                <p className={styles.bold}>Iniziativa</p>
                 <div className={styles.valueWithControls}>
                   {statsEdit && <IconButton size="small" onClick={() => removeOne("initiative", "combatInfo")}>
                     <RemoveIcon sx={{ color: "white" }} />
@@ -123,7 +123,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
                 </div>
               </div>
               <div className={styles.flexItem}>
-                <p>CA</p>
+                <p className={styles.bold}>CA</p>
                 <div className={styles.valueWithControls}>
                   {statsEdit && <IconButton size="small" onClick={() => removeOne("ac", "combatInfo")}>
                     <RemoveIcon sx={{ color: "white" }} />
@@ -135,7 +135,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
                 </div>
               </div>
               <div className={styles.flexItem}>
-                <p>Velocità</p>
+                <p className={styles.bold}>Velocità</p>
                 <div className={styles.valueWithControls}>
                   {statsEdit && <IconButton size="small" onClick={() => removeOne("speed", "combatInfo")}>
                     <RemoveIcon sx={{ color: "white" }} />
@@ -151,7 +151,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
             {/* Proficiency and Passive Perception Section */}
             <div className={styles.statsGroup}>
               <div className={styles.flexItem}>
-                <p>Proficiency</p>
+                <p className={styles.bold}>Competenza</p>
                 <div className={styles.valueWithControls}>
                   {statsEdit && <IconButton size="small" onClick={() => removeOne("proficiency", "survivalInfo")}>
                     <RemoveIcon sx={{ color: "white" }} />
@@ -163,7 +163,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
                 </div>
               </div>
               <div className={styles.flexItem}>
-                <p>Percezione Passiva</p>
+                <p className={styles.bold}>Perc. Passiva</p>
                 <div className={styles.valueWithControls}>
                  {statsEdit && <IconButton size="small" onClick={() => removeOne("perception", "survivalInfo")}>
                     <RemoveIcon sx={{ color: "white" }} />
@@ -197,7 +197,7 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
                       <RemoveIcon sx={{ color: "white" }} />
                     </IconButton>}
                     <p>{profile?.vitalInfo.deathSaves.failures}</p>
-                    {statsEdit && <IconButton size="small" onClick={() => addOne("failures", "deathSaves")}>
+                    {statsEdit && <IconButton size="small" onClick={() => addOne("deathSaves.failures", "vitalInfo")}>
                       <AddIcon sx={{ color: "white" }} />
                     </IconButton>}
                   </div>
