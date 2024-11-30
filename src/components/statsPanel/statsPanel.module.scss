@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     gap: 8px; // Space between the buttons and the value
+    min-height: 34px;
     p {
       margin: 0;
     }

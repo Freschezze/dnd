@@ -43,8 +43,10 @@ function App() {
       ) : (
         <div className={styles.App}>
           <Header />
-          <StatsPanel />
-          <Background />
+          <div className={styles.wrapper}>
+            <StatsPanel />
+            <Background />
+          </div>
           <BottomAppBar />
         </div>
       )}

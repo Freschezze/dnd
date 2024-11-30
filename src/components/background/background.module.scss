@@ -1,26 +1,44 @@
-@import '../../shared/scss/variables';
 
-.backgroundAccordionWrapper{
-    margin-top: 25px;
+.bgProfileDetails {
+  color: white;
+  font-size: 18px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-    .bgProfileDetails{
-        &::after {
-            content: '';
-            display: block;
-            width: 100%; /* Line width, adjust as needed */
-            height: 1px; /* Line thickness */
-            background-color: whitesmoke; /* Line color */
-            margin: 25px auto 0; /* Centers the line */
-          }
+.bgProfileDetails p {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 16px;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 15px;
+}
 
-          p{
-            margin-bottom: 10px;
-            font-family: 'Medieval Sharp';
-            font-size: 18px;
-            text-transform: capitalize;
-        }
-        span{
-            font-style: italic;
-        }
-    }
+.bgProfileDetails span {
+  font-weight: bold;
+}
+
+.bgProfileDetails p span {
+  color: #ccc; /* Lighter color for labels */
+}
+
+.accordionSummary {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: #444;
+  color: white;
+}
+
+.accordionSummary p {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.MuiAccordionSummary-expandIcon {
+  color: white;
 }
