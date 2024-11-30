@@ -26,6 +26,11 @@ const theme = createTheme({
           backgroundColor: "#1f1f1f", // Set background color of Accordion
           color: "#f5f5f5", // Set text color
           boxShadow: "none", // Remove the box shadow
+          "&::before": {
+            content: '""', // Required to ensure the pseudo-element renders
+            backgroundColor: "transparent", // Set to transparent or any desired color
+            height: "0", // Remove the visible effect
+          },
         },
       },
     },

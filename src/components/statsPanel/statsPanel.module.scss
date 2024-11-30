@@ -24,6 +24,15 @@
   flex: 1;
   color: white;
   user-select: none;
+  gap: 4px;
+  .valueWithControls {
+    display: flex;
+    align-items: center;
+    gap: 8px; // Space between the buttons and the value
+    p {
+      margin: 0;
+    }
+  }
 
   p {
     margin: 4px 0;
