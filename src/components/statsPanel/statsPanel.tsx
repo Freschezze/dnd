@@ -6,7 +6,6 @@ import {
     IconButton,
   } from "@mui/material";
   import styles from "./statsPanel.module.scss";
-  import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
   import AddIcon from "@mui/icons-material/Add";
   import RemoveIcon from "@mui/icons-material/Remove";
   import { doc, updateDoc } from "firebase/firestore";
@@ -68,15 +67,14 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
     };
   
     return (
-      <Accordion sx={{width: '100%'}}>
+      <Accordion sx={{width: '100%'}} expanded>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
           <Typography fontSize={28}>Pannello Statistiche</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails sx={{pb: 0}}>
           <div className={styles.statsContainer}>
             {/* HP and Temp HP Section */}
             <div className={styles.statsGroup}>
@@ -177,33 +175,33 @@ import LockOpenIcon from '@mui/icons-material/LockOpen';
             </div>
   
             {/* Death Saving Throws Section */}
-            {/* <div className={styles.statsGroup}>
+            <div className={styles.statsGroup}>
               <div className={styles.flexItem}>
-                <p>Death Saves</p>
+                <p className={styles.bold}>Death Saves</p>
                 <div className={styles.deathSaves}>
                   <div className={styles.valueWithControls}>
                     <p>Successi:</p>
                     {statsEdit && <IconButton size="small" onClick={() => removeOne("success", "deathSaves")}>
                       <RemoveIcon sx={{ color: "white" }} />
                     </IconButton>}
-                    <p>{profile?.vitalInfo.deathSaves.success}</p>
+                    <p>{profile?.deathSaves.success}</p>
                     {statsEdit && <IconButton size="small" onClick={() => addOne("success", "deathSaves")}>
                       <AddIcon sx={{ color: "white" }} />
                     </IconButton>}
                   </div>
                   <div className={styles.valueWithControls}>
                     <p>Fallimenti:</p>
-                    {statsEdit && <IconButton size="small" onClick={() => removeOne("failures", "deathSaves")}>
+                    {statsEdit && <IconButton size="small" onClick={() => removeOne("fail", "deathSaves")}>
                       <RemoveIcon sx={{ color: "white" }} />
                     </IconButton>}
-                    <p>{profile?.vitalInfo.deathSaves.failures}</p>
-                    {statsEdit && <IconButton size="small" onClick={() => addOne("deathSaves.failures", "vitalInfo")}>
+                    <p>{profile?.deathSaves.fail}</p>
+                    {statsEdit && <IconButton size="small" onClick={() => addOne("fail", "deathSaves")}>
                       <AddIcon sx={{ color: "white" }} />
                     </IconButton>}
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div>
             <Typography onClick={toggleEdit} sx={{ fontSize: 24, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', mt: 2 }}>
             Edit

@@ -1,10 +1,11 @@
 import { Equipment } from "./equipment";
-import { Feats } from "./feats";
+import { Feat } from "./feats";
 import { AbilityScores } from "./abilityScores";
 import { BaseInfo } from "./baseInfo";
 import { CombatInfo } from "./combatInfo";
 import { VitalInfo } from "./vitalInfo";
 import { SurvivalInfo } from "./survivalInfo";
+import { DeathSaves } from "./deathSaves";
 
 export interface Profile {
     id: string;
@@ -14,7 +15,8 @@ export interface Profile {
     combatInfo: CombatInfo;
     survivalInfo: SurvivalInfo;
     abilityScores: AbilityScores;
-    feats: Feats; 
+    feats: Feat[]; 
+    deathSaves: DeathSaves;
     equipment: Equipment; 
     [key: string]: any;
   }

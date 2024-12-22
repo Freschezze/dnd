@@ -1,0 +1,29 @@
+
+.asProfileDetails {
+    color: white;
+    font-size: 18px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    p {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      font-size: 16px;
+      background-color: #333;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  .asProfileDetails p span {
+    color: #ccc; /* Lighter color for labels */
+  }
+  .text{
+    font-family: "Medieval Sharp";
+    font-size: 16px;
+  }
+  

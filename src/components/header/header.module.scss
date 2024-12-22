@@ -2,13 +2,12 @@
 
 .profileHeader {
     background-image: url(../../assets/images/rokan-big.png);
-    height: 30vh;
+    height: 25vh;
     background-size: cover;
-    background-position: center;
+    background-position: 0 40%;
     position: relative;
     z-index: 1;
     position: relative;
-    margin-bottom: 10px;
     &::after {
       content: "";
       position: absolute;

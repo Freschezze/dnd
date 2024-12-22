@@ -8,9 +8,13 @@ import { useEffect } from "react";
 import { useDndStore } from "./store/DndStore ";
 import { Profile } from "./entities/profile";
 import StatsPanel from "./components/statsPanel/statsPanel";
+import Abilities from "./components/abilities/abilities";
+import Offense from "./components/offense/offense";
+import Equipment from "./components/equipment/equipment";
+import EditTab from "./components/edit/edit";
 
 function App() {
-  const { setProfile, setIsLoading, isLoading } = useDndStore();
+  const { setProfile, setIsLoading, isLoading, tabValue } = useDndStore();
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -39,14 +43,26 @@ function App() {
   return (
     <div className={styles.AppWrapper}>
       {isLoading ? (
-        <div className={styles.loading}>Loading...</div> 
+        <div className={styles.loading}>Loading...</div>
       ) : (
         <div className={styles.App}>
-          <Header />
-          <div className={styles.wrapper}>
-            <StatsPanel />
-            <Background />
-          </div>
+          {tabValue === 0 ? (
+            <>
+              <Header />
+              <div className={styles.wrapper}>
+                <StatsPanel />
+                <Background />
+              </div>
+            </>
+          ) : tabValue === 1 ? (
+            <Abilities />
+          ) : tabValue === 2 ? (
+            <Offense />
+          ) : tabValue === 3 ? (
+            <Equipment />
+          ) : tabValue === 4 ? (
+            <EditTab />
+          ) : null}
           <BottomAppBar />
         </div>
       )}
