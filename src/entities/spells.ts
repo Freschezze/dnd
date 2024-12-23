@@ -15,9 +15,5 @@ export interface Spells {
 }
 
 export interface SpellLevels {
-    1: Spells[];
-    2: Spells[];
-    3: Spells[];
-    4: Spells[];
-    5: Spells[];
+    [level: string]: Spells[]; 
 }
