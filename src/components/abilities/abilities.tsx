@@ -12,19 +12,14 @@ import styles from "./abilities.module.scss";
 const Abilities: React.FC = () => {
   const { profile } = useDndStore();
 
-  const handleAsBonus = (as: number): string => {
-    const bonus = Math.floor((as - 10) / 2);
+  const handleAsBonus = (
+    as: number,
+    prof: boolean,
+    proficiencyBonus: number
+  ): string => {
+    const bonus = Math.floor((as - 10) / 2) + (prof ? proficiencyBonus : 0);
     return bonus >= 0 ? `(+${bonus})` : `(${bonus})`;
   };
-
-  const abilityScores = [
-    { name: "Str", score: profile?.abilityScores.str },
-    { name: "Dex", score: profile?.abilityScores.dex },
-    { name: "Con", score: profile?.abilityScores.con },
-    { name: "Int", score: profile?.abilityScores.int },
-    { name: "Wis", score: profile?.abilityScores.wis },
-    { name: "Cha", score: profile?.abilityScores.cha },
-  ];
 
   return (
     <>
@@ -33,12 +28,16 @@ const Abilities: React.FC = () => {
           <Typography sx={{ fontSize: 28 }}>Punteggi abilità</Typography>
         </AccordionSummary>
         <AccordionDetails className={styles.asProfileDetails}>
-          {abilityScores.map(({ name, score }) => (
-            <p key={name}>
-              <span>{name}</span> {score}{" "}
-              {score !== undefined ? handleAsBonus(score) : "(0)"}
-            </p>
-          ))}
+          {profile && Object.entries(profile.abilityScores).map(
+            ([name, { value, prof }]) => (
+              <p key={name}>
+                <span>{name.toUpperCase()}</span> {value}{" "}
+                {value !== undefined
+                  ? handleAsBonus(value, prof, profile.survivalInfo.proficiency)
+                  : "(0)"}
+              </p>
+            )
+          )}
         </AccordionDetails>
       </Accordion>
       <Accordion sx={{ width: "100%" }}>
@@ -88,9 +87,6 @@ const Abilities: React.FC = () => {
             <Box
               sx={{
                 borderRadius: "8px",
-                p: 2,
-                mb: 2,
-                backgroundColor: "#444",
               }}
             >
               <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
@@ -125,9 +121,6 @@ const Abilities: React.FC = () => {
             <Box
               sx={{
                 borderRadius: "8px",
-                p: 2,
-                mb: 2,
-                backgroundColor: "#444",
               }}
             >
               <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
@@ -161,7 +154,7 @@ const Abilities: React.FC = () => {
         </AccordionDetails>
       </Accordion>
       <Accordion sx={{ width: "100%" }}>
-      <AccordionSummary
+        <AccordionSummary
           expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
           aria-controls="panel4a-content"
           id="panel4a-header"
@@ -195,15 +188,36 @@ const Abilities: React.FC = () => {
                           {spell.name}
                         </Typography>
                         <Typography variant="body1" className={styles.text}>
-                          {spell.description}
-                          <br/>
-                          {spell.note}
-                          <br/>
-                          <p className={styles.textItalic}>Tempo di Lancio: <span>{spell.castingTime}</span></p>
-                          <p className={styles.textItalic}>Componenti:
-                            <span> {spell.components.verbal ? 'V,' : null}</span>
-                            <span> {spell.components.somatic ? 'S,' : null}</span>
-                            <span> {spell.components.material ? spell.components.material : null}</span>  
+                          <p className={styles.textItalic}>
+                            Tempo di Lancio: <span>{spell.castingTime}</span>
+                          </p>
+                          <p className={styles.textItalic}>
+                            Gittata: <span>{spell.range}</span>
+                          </p>
+                          <p className={styles.textItalic}>
+                            Durata: <span>{spell.duration}</span>
+                          </p>
+                          <p className={styles.textItalic}>
+                            Bersaglio: <span>{spell.range}</span>
+                          </p>
+                          <br />
+                          <p>{spell.description}</p>
+                          <br />
+                          <p>{spell.note}</p>
+                          <br />
+                          <p className={styles.textItalic}>
+                            Componenti:
+                            <span> {spell.components.verbal ? "V" : null}</span>
+                            <span>
+                              {" "}
+                              {spell.components.somatic ? ", S" : null}
+                            </span>
+                            <span>
+                              {" "}
+                              {spell.components.material
+                                ? `, ${spell.components.material}`
+                                : null}
+                            </span>
                           </p>
                         </Typography>
                       </Box>

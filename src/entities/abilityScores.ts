@@ -1,8 +1,13 @@
+export interface AbilityScore {
+  value: number;
+  prof: boolean;
+}
+
 export interface AbilityScores {
-    int: number; // Intelligence
-    cha: number; // Charisma
-    wis: number; // Wisdom
-    dex: number; // Dexterity
-    str: number; // Strength
-    con: number; // Constitution
-  }
+  int: AbilityScore; 
+  cha: AbilityScore; 
+  wis: AbilityScore; 
+  dex: AbilityScore; 
+  str: AbilityScore;
+  con: AbilityScore;
+}
