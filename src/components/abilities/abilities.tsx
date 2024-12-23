@@ -8,16 +8,22 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useDndStore } from "../../store/DndStore ";
 import styles from "./abilities.module.scss";
+import { AbilityScores } from "../../entities/abilityScores";
 
 const Abilities: React.FC = () => {
   const { profile } = useDndStore();
 
-  const handleAsBonus = (
-    as: number,
-    prof: boolean,
-    proficiencyBonus: number
-  ): string => {
-    const bonus = Math.floor((as - 10) / 2) + (prof ? proficiencyBonus : 0);
+  const abilityOrder: (keyof AbilityScores)[] = [
+    "str",
+    "dex",
+    "con",
+    "int",
+    "wis",
+    "cha",
+  ];
+
+  const handleAsBonus = (as: number): string => {
+    const bonus = Math.floor((as - 10) / 2);
     return bonus >= 0 ? `(+${bonus})` : `(${bonus})`;
   };
 
@@ -28,16 +34,18 @@ const Abilities: React.FC = () => {
           <Typography sx={{ fontSize: 28 }}>Punteggi abilità</Typography>
         </AccordionSummary>
         <AccordionDetails className={styles.asProfileDetails}>
-          {profile && Object.entries(profile.abilityScores).map(
-            ([name, { value, prof }]) => (
-              <p key={name}>
-                <span>{name.toUpperCase()}</span> {value}{" "}
-                {value !== undefined
-                  ? handleAsBonus(value, prof, profile.survivalInfo.proficiency)
-                  : "(0)"}
-              </p>
-            )
-          )}
+          {profile &&
+            abilityOrder.map((key) => {
+              const { value, prof } = profile.abilityScores[key];
+              return (
+                <p key={key}>
+                  <span>{key.toUpperCase()}</span> {value}{" "}
+                  {value !== undefined
+                    ? handleAsBonus(value) + (prof ? ` (Prof: +${profile.survivalInfo.proficiency})` : "")
+                    : "(0)"}
+                </p>
+              );
+            })}
         </AccordionDetails>
       </Accordion>
       <Accordion sx={{ width: "100%" }}>
