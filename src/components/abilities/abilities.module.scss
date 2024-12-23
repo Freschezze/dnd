@@ -1,3 +1,4 @@
+@import '../../shared/scss/fonts';
 
 .asProfileDetails {
     color: white;
@@ -23,7 +24,12 @@
     color: #ccc; /* Lighter color for labels */
   }
   .text{
-    font-family: "Medieval Sharp";
+    font-family: "Medieval Sharp" !important;
     font-size: 16px;
+  }
+  .textItalic{
+    font-family: "Medieval Sharp" !important;
+    font-size: 16px;
+    font-style: italic;
   }
   

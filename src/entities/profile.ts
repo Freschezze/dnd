@@ -6,6 +6,8 @@ import { CombatInfo } from "./combatInfo";
 import { VitalInfo } from "./vitalInfo";
 import { SurvivalInfo } from "./survivalInfo";
 import { DeathSaves } from "./deathSaves";
+import { Privileges } from "./privileges";
+import { SpellLevels } from "./spells";
 
 export interface Profile {
     id: string;
@@ -18,5 +20,7 @@ export interface Profile {
     feats: Feat[]; 
     deathSaves: DeathSaves;
     equipment: Equipment; 
+    privileges: Privileges;
+    spells: SpellLevels;
     [key: string]: any;
   }
