@@ -19,6 +19,11 @@ const Privileges: React.FC = () => {
           expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
           aria-controls="panel3a-content"
           id="panel3a-header"
+          sx={{
+            backgroundColor: "#333",
+            borderRadius: "8px",
+            margin: "10px",
+          }}
         >
           <Typography sx={{ fontSize: 28 }}>Privilegi</Typography>
         </AccordionSummary>

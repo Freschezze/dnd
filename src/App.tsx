@@ -1,5 +1,4 @@
 import styles from "./App.module.scss";
-import Background from "./components/background/background";
 import BottomAppBar from "./components/bottomAppBar/bottomAppBar";
 import Header from "./components/header/header";
 import { db } from "./firebaseConfig";
@@ -51,7 +50,6 @@ function App() {
               <Header />
               <div className={styles.wrapper}>
                 <StatsPanel />
-                <Background />
               </div>
             </>
           ) : tabValue === 1 ? (

@@ -18,6 +18,11 @@ const Background: React.FC = () => {
         expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
         aria-controls="panel2a-content"
         id="panel2a-header"
+        sx={{
+          backgroundColor: "#333",
+          borderRadius: "8px",
+          margin: "10px",
+        }}
       >
         <Typography sx={{ fontSize: 28 }}>Identità e Origini</Typography>
       </AccordionSummary>

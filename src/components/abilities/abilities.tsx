@@ -10,6 +10,7 @@ import { AbilityScores } from "../../entities/abilityScores";
 import Privileges from "./privileges";
 import Spells from "./spells";
 import Feats from "./feats";
+import Background from "../background/background";
 
 const Abilities: React.FC = () => {
   const { profile } = useDndStore();
@@ -63,6 +64,7 @@ const Abilities: React.FC = () => {
       <Spells />
       <Privileges />
       <Feats />
+      <Background />
     </>
   );
 };

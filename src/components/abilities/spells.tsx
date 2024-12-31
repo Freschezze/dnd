@@ -21,6 +21,11 @@ const Spells: React.FC = () => {
           expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
           aria-controls="panel4a-content"
           id="panel4a-header"
+          sx={{
+            backgroundColor: "#333",
+            borderRadius: "8px",
+            margin: "10px",
+          }}
         >
           <Typography sx={{ fontSize: 28 }}>Magie</Typography>
         </AccordionSummary>
