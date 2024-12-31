@@ -66,6 +66,12 @@ const Spells: React.FC = () => {
                           variant="body1"
                           className={styles.textItalic}
                         >
+                          Bersaglio: <span>{spell.target}</span>
+                        </Typography>
+                        <Typography
+                          variant="body1"
+                          className={styles.textItalic}
+                        >
                           Durata: <span>{spell.duration}</span>
                         </Typography>
                         <Typography

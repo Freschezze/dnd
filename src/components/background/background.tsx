@@ -23,6 +23,9 @@ const Background: React.FC = () => {
       </AccordionSummary>
       <AccordionDetails className={styles.bgProfileDetails}>
         <p>
+          <span>Livello:</span> {profile?.baseInfo.level}
+        </p>
+        <p>
           <span>Razza:</span> {profile?.baseInfo.race}
         </p>
         <p>

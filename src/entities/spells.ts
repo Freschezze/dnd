@@ -12,6 +12,7 @@ export interface Spells {
     range: string;
     ritual: boolean;
     school: string;
+    target: string;
 }
 
 export interface SpellLevels {
