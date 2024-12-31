@@ -22,6 +22,7 @@ const Abilities: React.FC = () => {
     "wis",
     "cha",
   ];
+
   const handleAsBonus = (as: number): string => {
     const bonus = Math.floor((as - 10) / 2);
     return bonus >= 0 ? `(+${bonus})` : `(${bonus})`;
@@ -37,11 +38,19 @@ const Abilities: React.FC = () => {
           {profile &&
             abilityOrder.map((key) => {
               const { value, prof } = profile.abilityScores[key];
+              let displayBonus = handleAsBonus(value);
+
+              // Handle the special case for CHA
+              if (key === "cha" && profile.abilityScores["wis"].value !== undefined) {
+                const wisBonus = Math.floor((profile.abilityScores["wis"].value - 10) / 2);
+                displayBonus = handleAsBonus(value) + (wisBonus >= 0 ? ` (+${wisBonus})` : ` (${wisBonus})`);
+              }
+
               return (
                 <p key={key}>
                   <span>{key.toUpperCase()}</span> {value}{" "}
                   {value !== undefined
-                    ? handleAsBonus(value) +
+                    ? displayBonus +
                       (prof
                         ? ` (Prof: +${profile.survivalInfo.proficiency})`
                         : "")
